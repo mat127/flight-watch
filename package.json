@@ -1,0 +1,36 @@
+{
+  "name": "flight-watch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/cli.ts",
+  "scripts": {
+    "compile": "npx tsc --watch",
+    "prelambda-pack": "rm -f lambda.zip",
+    "lambda-pack": "zip -j lambda.zip ./build/*",
+    "postlambda-pack": "zip -r lambda.zip ./node_modules/ package.json",
+    "lambda-deploy": "aws lambda update-function-code --function-name flight-watch --zip-file fileb://lambda.zip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mat127/flight-watch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mat127/flight-watch/issues"
+  },
+  "homepage": "https://github.com/mat127/flight-watch#readme",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "axios-cookiejar-support": "^5.0.0",
+    "pg": "^8.11.3",
+    "tough-cookie": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.133",
+    "@types/node": "^20.11.16",
+    "@types/pg": "^8.11.0",
+    "@types/tough-cookie": "^4.0.5",
+    "typescript": "^5.3.3"
+  }
+}
