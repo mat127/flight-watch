@@ -1,4 +1,4 @@
-import ra from "./ra";
+import wa from "./wa";
 
-ra.loadAll()
+wa.loadAll()
   .catch(error => console.error("Error: ", error));
