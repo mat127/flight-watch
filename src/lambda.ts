@@ -1,9 +1,13 @@
 import {APIGatewayProxyEvent, APIGatewayProxyResult} from 'aws-lambda';
 import ra from "./ra";
+import wa from './wa';
 
 export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   try {
-    await ra.loadAll();
+    await Promise.all([
+      ra.loadAll(),
+      wa.loadAll()
+    ]);
     return {
       statusCode: 200,
       body: JSON.stringify({

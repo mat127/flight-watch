@@ -1,4 +1,8 @@
+import ra from "./ra";
 import wa from "./wa";
 
-wa.loadAll()
+Promise.all([
+  ra.loadAll(),
+  wa.loadAll()
+])
   .catch(error => console.error("Error: ", error));
