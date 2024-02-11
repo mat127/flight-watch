@@ -27,5 +27,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npx tsc
-    - run: npm run lambda-pack --if-present
+
+    - name: Compile
+      run: npx tsc
+
+    - name: Prepare Lambda deployment archive
+      run: npm run lambda-pack --if-present
+
+    - name: Upload Lambda deployment archive
+      uses: actions/upload-artifact@v2
+      with:
+        name: lambda.zip
+        path: lambda.zip
