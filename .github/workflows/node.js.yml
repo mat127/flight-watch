@@ -36,7 +36,7 @@ jobs:
       run: npm run lambda-pack --if-present
 
     - name: Upload Lambda deployment archive
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: lambda.zip
         path: lambda.zip
