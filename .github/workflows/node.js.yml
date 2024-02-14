@@ -30,8 +30,11 @@ jobs:
     - name: Compile
       run: npx tsc
 
+    - name: Remove dev dependencies
+      run: npm prune --production
+
     - name: Prepare Lambda deployment archive
-      run: npm run lambda-pack --if-present
+      run: npm run lambda-pack
 
     - name: Upload Lambda deployment archive
       uses: actions/upload-artifact@v4
