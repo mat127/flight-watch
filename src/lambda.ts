@@ -6,7 +6,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
   try {
     await Promise.all([
       ra.loadAll(),
-      wa.loadAll()
+      //wa.loadAll()
     ]);
     return {
       statusCode: 200,
