@@ -2,11 +2,15 @@
   "name": "flight-watch",
   "version": "1.0.0",
   "description": "",
-  "main": "src/cli.ts",
+  "main": "build/gcf.js",
   "scripts": {
     "precompile": "rm -f ./build/*",
     "compile": "npx tsc",
     "compile-watch": "npx tsc --watch",
+    "postcompile": "cp .puppeteerrc.cjs build",
+    "gcp-build": "npm run compile",
+    "postgcp-build": "npx puppeteer browsers install chrome",
+    "gcf-deploy": "gcloud functions deploy flight-watch --gen2 --memory=1024M --runtime=nodejs20 --entry-point handler --allow-unauthenticated --trigger-http",
     "prelambda-pack": "rm -f lambda.zip",
     "lambda-pack": "zip -j lambda.zip ./build/*.js",
     "postlambda-pack": "zip -r lambda.zip ./node_modules/ package.json",
@@ -30,6 +34,7 @@
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   },
   "devDependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
     "@types/aws-lambda": "^8.10.133",
     "@types/node": "^20.11.16",
     "@types/pg": "^8.11.0",

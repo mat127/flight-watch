@@ -26,7 +26,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
   }
 }
 
-async function load<ParamsType,ReturnType>(
+export async function load<ParamsType,ReturnType>(
   envVarName: string,
   loader: (params:ParamsType) => Promise<ReturnType>
 ): Promise<ReturnType | undefined>
