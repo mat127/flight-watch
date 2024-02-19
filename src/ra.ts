@@ -77,6 +77,17 @@ const flightParams: FlightParams[] = [{
   DateIn: "2024-05-05",
   RoundTrip: true,
   ToUs: "AGREED"
+}, {
+  ADT: 1,
+  TEEN: 0,
+  CHD: 0,
+  INF: 0,
+  Origin: "OSR",
+  Destination: "STN",
+  DateOut: "2024-05-01",
+  DateIn: "2024-05-06",
+  RoundTrip: true,
+  ToUs: "AGREED"
 }];
 
 const client = axios.create({
