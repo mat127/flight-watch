@@ -1,14 +1,15 @@
-import {pool} from "./db";
+import {db} from "./db";
 import puppeteer, { Browser } from 'puppeteer';
 import puppeteerExtra from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 
-const flightUrls = [
-  "https://wizzair.com/en-gb#/booking/select-flight/KRK/HER/2024-09-02/2024-09-09/1/0/0/null"
-];
+export class WaLoader {
 
-export const wa = {
-  loadAll: async function (): Promise<Fare[]> {
+  static async loadAll(flightUrls?: string[]): Promise<Fare[]> {
+    if (flightUrls === undefined || flightUrls.length === 0) {
+      console.log("No WizzAir flights provided, skipping their loading.");
+      return [];
+    }
     const loader = await FareLoader.create();
     const allQueryResults = await Promise.all(
       flightUrls.map(url => loader.load(url))
@@ -18,7 +19,7 @@ export const wa = {
       (acc, curr) => acc.concat(curr), []
     );
   }
-};
+}
 
 class FareChart {
   outboundFlights: Fare[];
@@ -113,8 +114,6 @@ class FareLoader {
         fare.classOfService
       ],
     };
-    return pool.query(query);
+    return db.pool.query(query);
   }
 }
-
-export default wa;

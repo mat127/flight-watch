@@ -1,8 +1,11 @@
-import ra from "./ra";
-import wa from "./wa";
+import {RaLoader} from "./ra";
+import {WaLoader} from "./wa";
+
+const raFlightParams = require("../ra.json");
+const waFlightParams = require("../wa.json");
 
 Promise.all([
-  ra.loadAll(),
-  wa.loadAll()
+  RaLoader.loadAll(raFlightParams),
+  WaLoader.loadAll(waFlightParams)
 ])
   .catch(error => console.error("Error: ", error));

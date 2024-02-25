@@ -1,0 +1,45 @@
+[{
+  "ADT": 1,
+  "TEEN": 0,
+  "CHD": 0,
+  "INF": 0,
+  "Origin": "BTS",
+  "Destination": "AHO",
+  "DateOut": "2024-06-30",
+  "DateIn": "2024-07-07",
+  "RoundTrip": true,
+  "ToUs": "AGREED"
+}, {
+  "ADT": 1,
+  "TEEN": 0,
+  "CHD": 0,
+  "INF": 0,
+  "Origin": "KTW",
+  "Destination": "AHO",
+  "DateOut": "2024-07-01",
+  "DateIn": "2024-07-08",
+  "RoundTrip": true,
+  "ToUs": "AGREED"
+}, {
+  "ADT": 1,
+  "TEEN": 0,
+  "CHD": 0,
+  "INF": 0,
+  "Origin": "KRK",
+  "Destination": "BVA",
+  "DateOut": "2024-05-01",
+  "DateIn": "2024-05-05",
+  "RoundTrip": true,
+  "ToUs": "AGREED"
+}, {
+  "ADT": 1,
+  "TEEN": 0,
+  "CHD": 0,
+  "INF": 0,
+  "Origin": "OSR",
+  "Destination": "STN",
+  "DateOut": "2024-05-01",
+  "DateIn": "2024-05-06",
+  "RoundTrip": true,
+  "ToUs": "AGREED"
+}]

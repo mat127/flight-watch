@@ -1,12 +1,12 @@
 import {APIGatewayProxyEvent, APIGatewayProxyResult} from 'aws-lambda';
-import ra from "./ra";
-import wa from './wa';
+import {RaLoader} from "./ra";
+import {WaLoader} from './wa';
 
 export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   try {
     await Promise.all([
-      ra.loadAll(),
-      //wa.loadAll()
+      load("RA_FLIGHTS", RaLoader.loadAll),
+      load("WA_FLIGHTS", WaLoader.loadAll),
     ]);
     return {
       statusCode: 200,
@@ -20,8 +20,21 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: 'some error happened',
+        message: 'An error happened.',
       }),
     };
   }
+}
+
+async function load<ParamsType,ReturnType>(
+  envVarName: string,
+  loader: (params:ParamsType) => Promise<ReturnType>
+): Promise<ReturnType | undefined>
+{
+  if (process.env[envVarName] === undefined) {
+    console.log(`${envVarName} is not defined, skipping flights data loading.`);
+    return undefined;
+  }
+  const flightParams: ParamsType = JSON.parse(process.env[envVarName]!);
+  return loader(flightParams);
 }
