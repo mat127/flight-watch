@@ -68,6 +68,7 @@ export class RaLoader {
   }
 
   private async loadFlight(params: FlightParams): Promise<Availability> {
+    console.log(`Loading RyanAir flight: ${params.Origin} - ${params.Destination} (${params.DateOut} - ${params.DateIn}).`);
     const response = await this.client.get('/availability', {
       params: params,
     });
