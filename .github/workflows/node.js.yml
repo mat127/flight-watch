@@ -39,8 +39,11 @@ jobs:
     - name: Upload Lambda deployment archive
       uses: actions/upload-artifact@v4
       with:
-        name: lambda.zip
-        path: lambda.zip
+        name: lambda
+        path: |
+           build/*.js
+           node_modules
+           package.json
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
