@@ -36,15 +36,6 @@ jobs:
     - name: Prepare Lambda deployment archive
       run: npm run lambda-pack
 
-    - name: Upload Lambda deployment archive as artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: lambda
-        path: |
-           build/*.js
-           node_modules
-           package.json
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
