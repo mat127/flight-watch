@@ -36,7 +36,7 @@ jobs:
     - name: Prepare Lambda deployment archive
       run: npm run lambda-pack
 
-    - name: Upload Lambda deployment archive
+    - name: Upload Lambda deployment archive as artifact
       uses: actions/upload-artifact@v4
       with:
         name: lambda
@@ -52,6 +52,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-central-1
       
-    - name: Update Lambda function code
+    - name: Update AWS Lambda function code
       run: aws lambda update-function-code --function-name flight-watch --zip-file fileb://lambda.zip
 
