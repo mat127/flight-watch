@@ -49,7 +49,9 @@ export class RaLoader {
   private client = axios.create({
     baseURL: "https://www.ryanair.com/api/booking/v4/cs-cz",
     headers: {
-      Cookie: "fr-correlation-id=816533f2-4c75-4711-af2e-d47114bbb1a8; rid=f76dd9f8-3152-44ce-88ca-569995ac4a6c; rid.sig=jyna6R42wntYgoTpqvxHMK7H+KyM6xLed+9I3KsvYZaVt7P36AL6zp9dGFPu5uVxaIiFpNXrszr+LfNCdY3IT3oCSYLeNv/ujtjsDqOzkY66AL3V6kH2vsK+au12X21HkZ4S8GaG8CoBmm/m0rLsOKYkxtw+U3+ejBaPc15jJjKXnc3owMBg82SNbqyKjVd6Ve3KOI0h//ziAUbLRk96P674a+EYzjTmvcloZ24qFromUOZ5KQyVDeXkO0kKtz/pWewryPYSCpa3GzHnA6KnjQWuW7BQb+5D9mxOtt3cezjk29eQET5J3TQc53o/Va7rwWT7rPGVgWzG+d8xNhSfn+Rn4ZQhUhVvG3FgDr+gMjtQckGbt3xQO7kRuuTd/u3cVUqCx9WE3FBRPCzzvPCuZCjG3feCn1CZdNbCMAVjE8MV2SGj+6CIvpmGy0I1kBOG38j2XymO+3MpwzCzkiOHB+jq1EftwXV/mShMTHu9amtrzq7X4EHUxiARuYmBVgEX2NYDYvra5POb4YP+3tbsS1iu9xvcOQwCn/BMUiCrwtE0cTtIZMmSRMaL6xcmq6mvV8sjlswM7xoFuaGlWBcYggU7O6yGO1Co5D8FmIkUHSoMER8yjghJY8PejLWjbl/b8N/74itQoIZnQfADsx66AGbnFX4JKWEOQHPaf5pHCaF40NoqGBIzLIkPnBDlJ9B9EtOM7sJltTn3L6b6oWcIHy0THHtCk7LItNMezG8TUmyTke5uAc4QQz+xrwyA4Mru; mkt=/cz/cs/"
+      Cookie: "fr-correlation-id=816533f2-4c75-4711-af2e-d47114bbb1a8; rid=f76dd9f8-3152-44ce-88ca-569995ac4a6c; rid.sig=jyna6R42wntYgoTpqvxHMK7H+KyM6xLed+9I3KsvYZaVt7P36AL6zp9dGFPu5uVxaIiFpNXrszr+LfNCdY3IT3oCSYLeNv/ujtjsDqOzkY66AL3V6kH2vsK+au12X21HkZ4S8GaG8CoBmm/m0rLsOKYkxtw+U3+ejBaPc15jJjKXnc3owMBg82SNbqyKjVd6Ve3KOI0h//ziAUbLRk96P674a+EYzjTmvcloZ24qFromUOZ5KQyVDeXkO0kKtz/pWewryPYSCpa3GzHnA6KnjQWuW7BQb+5D9mxOtt3cezjk29eQET5J3TQc53o/Va7rwWT7rPGVgWzG+d8xNhSfn+Rn4ZQhUhVvG3FgDr+gMjtQckGbt3xQO7kRuuTd/u3cVUqCx9WE3FBRPCzzvPCuZCjG3feCn1CZdNbCMAVjE8MV2SGj+6CIvpmGy0I1kBOG38j2XymO+3MpwzCzkiOHB+jq1EftwXV/mShMTHu9amtrzq7X4EHUxiARuYmBVgEX2NYDYvra5POb4YP+3tbsS1iu9xvcOQwCn/BMUiCrwtE0cTtIZMmSRMaL6xcmq6mvV8sjlswM7xoFuaGlWBcYggU7O6yGO1Co5D8FmIkUHSoMER8yjghJY8PejLWjbl/b8N/74itQoIZnQfADsx66AGbnFX4JKWEOQHPaf5pHCaF40NoqGBIzLIkPnBDlJ9B9EtOM7sJltTn3L6b6oWcIHy0THHtCk7LItNMezG8TUmyTke5uAc4QQz+xrwyA4Mru; mkt=/cz/cs/",
+      client: "desktop",
+      "client-version": "3.135.0"
     }
   });
 
